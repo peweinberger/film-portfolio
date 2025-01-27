@@ -1,0 +1,222 @@
+* {
+    --primary-color: #595959;
+    --background-color: rgb(241, 237, 226);
+    --accent-color: rgb(61, 66, 62);
+    --title-color: rgb(255, 240, 208);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-family: Lora, Arial, Helvetica, sans-serif;
+    
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    animation: ani1 24s ease-out forwards;
+}
+
+.wrapper-text {
+    text-align: center;
+    font-size: 45px;
+    line-height: 55px;
+    letter-spacing: 5px;
+    font-family: Lora, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 180px;
+    padding: 3rem 2rem;
+    border-radius: 0.25rem;
+    background-color: var(--title-color);
+    opacity: 0;
+    animation: ani2 0.5s ease-out forwards;
+}
+
+.wrapper-text h2,
+.wrapper-text h4 {
+    opacity: 0;
+    margin: 0;
+}
+
+.wrapper-text h2 {
+    animation: ani2 0.75s ease-out 1s forwards;
+}
+
+.wrapper-text h4 {
+    animation: ani2 0.75s ease-out 2s forwards;
+    padding-top: 10px;
+}
+
+@keyframes ani2 {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ani1 {
+    100% {
+        transform: scale(1.55);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+      }
+      40% {
+        transform: translateY(-50px); 
+      }
+      60% {
+        transform: translateY(-25px); 
+      }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    padding: 7rem;
+    padding-bottom: 15px;
+    padding-right: 10rem;
+    font-size: 20px;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+}
+
+.intro-text p {
+    margin-top: 10px;
+}
+
+img {
+    height: 450px;
+
+}
+
+.link-icons{
+    display: flex;
+    padding-left: 7rem;
+    padding-bottom: 20px;
+    gap: 2rem;
+    filter: invert(65%);
+}
+
+.fade-image {
+    animation: fadeIn 20s;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.down-arrow {
+    color: var(--background-color);
+    position: absolute;
+    top: calc(100vh - 60px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 2px;
+    animation: bounce 2s infinite;
+}
+
+.down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+}
+
+.hover-highlight {
+    display: inline-block;
+    /* Ensures proper spacing and hover area */
+    text-decoration: none;
+    /* Removes underline from link */
+    border: 0px solid transparent;
+    /* Default transparent border */
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    transition: all 0.3s ease;
+    /* Smooth transition effect */
+    z-index: 999;
+    /*margin-bottom: 0.5em;*/
+}
+
+.hover-highlight:hover {
+    scale: 1.05;
+    box-shadow: 5px 5px 10px 0 #3f3f3f;
+}
+
+.projects {
+    font-size: 45px;
+}
+
+.posters {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.description-text {
+    background-color: var(--accent-color);
+    box-sizing: border-box;
+    padding: 0.5em 0.75em;
+    border-radius: 0 0 6px 6px;
+    width: 300px;
+    height: 146px;
+    color: var(--background-color);
+}
+
+.poster-wrapper {
+    display: flex; 
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 75px; 
+    margin-bottom: 75px;
+}
